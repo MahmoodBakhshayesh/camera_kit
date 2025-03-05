@@ -9,7 +9,6 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
 /**
@@ -45,18 +44,18 @@ public class CamerakitPlugin implements FlutterPlugin, MethodCallHandler, Activi
     // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
     // depending on the user's project. onAttachedToEngine or registerWith must both be defined
     // in the same class.
-    public static void registerWith(Registrar registrar) {
-//    final MethodChannel channel = new MethodChannel(registrar.messenger(), "camerakit");
-//    channel.setMethodCallHandler(new CamerakitPlugin());
-
-//    if (registrar.activity() != null) {
-//      registrar
-//              .platformViewRegistry()
-//              .registerViewFactory(
-//                      "plugins/camera_kit"
-//                      , new CameraKitFactory(registrar));
+//    public static void registerWith(Registrar registrar) {
+////    final MethodChannel channel = new MethodChannel(registrar.messenger(), "camerakit");
+////    channel.setMethodCallHandler(new CamerakitPlugin());
+//
+////    if (registrar.activity() != null) {
+////      registrar
+////              .platformViewRegistry()
+////              .registerViewFactory(
+////                      "plugins/camera_kit"
+////                      , new CameraKitFactory(registrar));
+////    }
 //    }
-    }
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {

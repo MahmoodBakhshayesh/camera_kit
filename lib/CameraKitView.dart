@@ -32,7 +32,7 @@ enum BarcodeFormats {
 // ignore: must_be_immutable
 class CameraKitView extends StatefulWidget {
   /// In barcodeReader mode, while camera preview detect barcodes, This method is called.
-  final Function? onBarcodeRead;
+  final void Function(String barcode)? onBarcodeRead;
 
   ///After android and iOS user deny run time permission, this method is called.
   final Function? onPermissionDenied;
@@ -120,7 +120,7 @@ class _BarcodeScannerViewState extends State<CameraKitView>
           ));
     } else {
       visibilityDetector = VisibilityDetector(
-          key: Key('visible-camerakit-key-1'),
+          key: Key('visible-camerakitext-key-1'),
           onVisibilityChanged: (visibilityInfo) {
             if (visibilityInfo.visibleFraction == 0)
               controller!.setCameraVisible(false);

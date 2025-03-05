@@ -224,6 +224,12 @@ class CameraKitFlutterView : NSObject, FlutterPlatformView, AVCaptureVideoDataOu
                              session.addOutput(videoDataOutput!)
                  }
                 videoDataOutput.connection(with: .video)?.isEnabled = true
+                
+                photoOutput = AVCapturePhotoOutput()
+                    photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG])], completionHandler: nil)
+                if session.canAddOutput(photoOutput!){
+                    session.addOutput(photoOutput!)
+                }
 
             }
             else {

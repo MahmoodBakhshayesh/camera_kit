@@ -1,6 +1,6 @@
+import 'package:camerakit/camera_kit.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:camerakit/camerakit.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('camerakit');

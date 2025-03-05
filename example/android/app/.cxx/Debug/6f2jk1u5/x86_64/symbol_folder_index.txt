@@ -1,0 +1,1 @@
+/Users/fps/Desktop/FlutterPackages/flutter_camera_kit/example/build/app/intermediates/cxx/Debug/6f2jk1u5/obj/x86_64

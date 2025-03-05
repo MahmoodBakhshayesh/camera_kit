@@ -60,12 +60,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          height: 2000,
+          // height: 2000,
           child: Column(
             children: <Widget>[
               Expanded(
                   child: CameraKitView(
-                hasBarcodeReader: false,
+                hasBarcodeReader: true,
                 barcodeFormat: BarcodeFormats.FORMAT_ALL_FORMATS,
                 scaleType: ScaleTypeMode.fill,
                 onBarcodeRead: (barcode) {
@@ -73,13 +73,13 @@ class _MyAppState extends State<MyApp> {
                 },
                 previewFlashMode: CameraFlashMode.auto,
                 cameraKitController: cameraKitController,
-                androidCameraMode: AndroidCameraMode.API_X,
+                // androidCameraMode: AndroidCameraMode.API_X,
                 cameraSelector: CameraSelector.back,
               )),
 //              Container(height: 250),
               Row(
                 children: <Widget>[
-                  RaisedButton(
+                  TextButton(
                     child: Text("Flash OFF"),
                     onPressed: () {
                       setState(() {
@@ -89,14 +89,14 @@ class _MyAppState extends State<MyApp> {
                       });
                     },
                   ),
-                  RaisedButton(
+                  TextButton(
                     child: Text("Capture"),
                     onPressed: () {
                       cameraKitController!.takePicture().then((value) =>
                           print("flutter take pictre result: " + value!));
                     },
                   ),
-                  RaisedButton(
+                  TextButton(
                     child: Text("Flash On"),
                     onPressed: () {
                       setState(() {
@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
               Builder(
-                builder: (context) => RaisedButton(
+                builder: (context) => TextButton(
                   child: Text("GO"),
                   onPressed: () {
                     Navigator.push(

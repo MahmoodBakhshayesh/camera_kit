@@ -722,8 +722,10 @@ public class CameraView2 implements CameraViewInterface, ImageReader.OnImageAvai
     private void setRepeatingRequest() {
         try {
             mainPreviewRequest = captureRequestBuilder.build();
-            if (hasBarcodeReader)
+            if (hasBarcodeReader) {
                 cameraCaptureSessions.setRepeatingRequest(mainPreviewRequest, captureCallbackBarcodeReader, backgroundHandler);
+                isReadyForTakingPicture = true;
+            }
             else {
                 cameraCaptureSessions.setRepeatingRequest(mainPreviewRequest, captureCallbackTakePicture, backgroundHandler);
                 isReadyForTakingPicture = true;
