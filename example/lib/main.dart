@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
 //              Container(height: 250),
               Row(
                 children: <Widget>[
-                  RaisedButton(
+                  TextButton(
                     child: Text("Flash OFF"),
                     onPressed: () {
                       setState(() {
@@ -89,14 +89,14 @@ class _MyAppState extends State<MyApp> {
                       });
                     },
                   ),
-                  RaisedButton(
+                  TextButton(
                     child: Text("Capture"),
                     onPressed: () {
                       cameraKitController!.takePicture().then((value) =>
                           print("flutter take pictre result: " + value!));
                     },
                   ),
-                  RaisedButton(
+                  TextButton(
                     child: Text("Flash On"),
                     onPressed: () {
                       setState(() {
@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
               Builder(
-                builder: (context) => RaisedButton(
+                builder: (context) => TextButton(
                   child: Text("GO"),
                   onPressed: () {
                     Navigator.push(
